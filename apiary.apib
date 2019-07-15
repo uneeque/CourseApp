@@ -1,0 +1,122 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Courses API
+
+This API gives opportunity for users rigister for courses.
+
+## Courses Collection [/courses]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "name": "English language",
+                "description": "'improve ur skills with us'",
+                "category": 1,
+                "logo": "'https://image.shutterstock.com/image-vector/en-logo-260nw-414474397.jpg'",
+                "contacts": [
+                    {
+                       "type": "PHONE",
+                       "value": "+996551080551",
+                       "course": 1
+                    },
+                 {
+                        "type": "FACEBOOK",
+                     "value": "nursultan@facebook.com",
+                     "course": 1
+                    },
+                    {
+                        "type": "EMAIL",
+                        "value": "bazarbaev_nu@iuca.kg",
+                        "course": 1
+                    }
+                ],
+                "branches": [
+                    {
+                        "address": "K.R. Tokmok city, Beregovaya st. 15",
+                        "latitude": "none",
+                        "longitude": "none",
+                        "course": 1
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Fight club",
+                "description": "\"Be stronger then yesterday\"",
+                "category": 2,
+                "logo": "'no logo'",
+                "contacts": [
+                    {
+                        "type": "PHONE",
+                        "value": "+9967012733705",
+                        "course": 2
+                    },
+                    {
+                        "type": "FACEBOOK",
+                        "value": "boc@facebook.com",
+                        "course": 2
+                    },
+                    {
+                        "type": "EMAIL",
+                        "value": "boxer@gmail.com",
+                        "course": 2
+                    }
+                ],
+                "branches": [
+                    {
+                        "address": "K.R. Bishkek cuty",
+                        "latitude": "none",
+                        "longitude": "none",
+                        "course": 2
+                    }
+                ]
+            }
+        ]
+### Create a New course [POST]
+
+To create new course u need to do it just a few click.
+
++ Request (application/json)
+
+        {
+            "question": "Favourite programming language?",
+            "choices": [
+                "Swift",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
