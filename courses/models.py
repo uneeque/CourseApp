@@ -41,3 +41,13 @@ class Contact(models.Model):
 
     def __str__(self):
         return str(self.type)
+
+
+class Employee(models.Model):
+    eno = models.IntegerField()
+    ename = models.CharField(max_length=64)
+    esal = models.FloatField()
+    eaddr = models.CharField(max_length=64)
+
+    def get_salary(self):
+        return self.esal
